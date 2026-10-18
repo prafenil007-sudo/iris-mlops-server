@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classifier | MLOps Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        <section class="app-card">
+            <aside class="intro-panel">
+                <div class="brand">
+                    <span class="brand-icon">I</span>
+                    <span>IRIS <span class="brand-light">/ MLOPS LAB</span></span>
+                </div>
+
+                <div class="flower-art" aria-hidden="true">
+                    <svg viewBox="0 0 240 240" role="presentation">
+                        <circle class="flower-halo" cx="120" cy="120" r="104"/>
+                        <ellipse class="petal petal-one" cx="120" cy="82" rx="25" ry="55"/>
+                        <ellipse class="petal petal-two" cx="120" cy="82" rx="25" ry="55"/>
+                        <ellipse class="petal petal-three" cx="120" cy="82" rx="25" ry="55"/>
+                        <ellipse class="petal petal-four" cx="120" cy="82" rx="25" ry="55"/>
+                        <ellipse class="petal petal-five" cx="120" cy="82" rx="25" ry="55"/>
+                        <circle class="flower-center" cx="120" cy="120" r="18"/>
+                        <path class="flower-stem" d="M120 139 C117 165 119 185 120 205"/>
+                        <path class="flower-leaf" d="M119 174 C89 151 70 164 74 180 C87 190 104 185 119 174Z"/>
+                        <path class="flower-leaf second-leaf" d="M121 188 C145 165 166 175 163 191 C151 202 135 199 121 188Z"/>
+                    </svg>
+                </div>
+
+                <p class="eyebrow">PROJECT 01 · CLASSIFICATION</p>
+                <h1>Meet your<br><span>Iris.</span></h1>
+                <p class="intro-copy">
+                    Enter four flower measurements. The trained model will predict
+                    whether it is setosa, versicolor, or virginica.
+                </p>
+
+                <div class="model-stats">
+                    <div>
+                        <strong>04</strong>
+                        <span>measurements</span>
+                    </div>
+                    <div>
+                        <strong>03</strong>
+                        <span>Iris species</span>
+                    </div>
+                    <div>
+                        <strong>ML</strong>
+                        <span>Logistic Regression</span>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="form-panel">
+                <div class="form-heading">
+                    <div>
+                        <p class="eyebrow form-eyebrow">MAKE A PREDICTION</p>
+                        <h2>Flower measurements</h2>
+                        <p class="form-copy">Enter the measurements in centimeters.</p>
+                    </div>
+                    <span class="ready-badge"><span></span> Model ready</span>
+                </div>
+
+                {% if error %}
+                    <div class="message error" role="alert">{{ error }}</div>
+                {% endif %}
+
+                {% if prediction %}
+                    <div class="message result" role="status" aria-live="polite">
+                        <span>Predicted species</span>
+                        <strong>{{ prediction }}</strong>
+                    </div>
+                {% endif %}
+
+                <form action="{{ url_for('prediction') }}" method="post">
+                    <div class="fields">
+                        <div class="field">
+                            <label for="sepal_length">Sepal length</label>
+                            <div class="input-wrap">
+                                <input id="sepal_length" name="sepal_length"
+                                       type="number" min="4.3" max="7.9" step="any"
+                                       placeholder="5.1"
+                                       value="{{ form_values.get('sepal_length', '') }}" required>
+                                <span>cm</span>
+                            </div>
+                            <small>Range: 4.3–7.9 cm</small>
+                        </div>
+
+                        <div class="field">
+                            <label for="sepal_width">Sepal width</label>
+                            <div class="input-wrap">
+                                <input id="sepal_width" name="sepal_width"
+                                       type="number" min="2.0" max="4.4" step="any"
+                                       placeholder="3.5"
+                                       value="{{ form_values.get('sepal_width', '') }}" required>
+                                <span>cm</span>
+                            </div>
+                            <small>Range: 2.0–4.4 cm</small>
+                        </div>
+
+                        <div class="field">
+                            <label for="petal_length">Petal length</label>
+                            <div class="input-wrap">
+                                <input id="petal_length" name="petal_length"
+                                       type="number" min="1.0" max="6.9" step="any"
+                                       placeholder="1.4"
+                                       value="{{ form_values.get('petal_length', '') }}" required>
+                                <span>cm</span>
+                            </div>
+                            <small>Range: 1.0–6.9 cm</small>
+                        </div>
+
+                        <div class="field">
+                            <label for="petal_width">Petal width</label>
+                            <div class="input-wrap">
+                                <input id="petal_width" name="petal_width"
+                                       type="number" min="0.1" max="2.5" step="any"
+                                       placeholder="0.2"
+                                       value="{{ form_values.get('petal_width', '') }}" required>
+                                <span>cm</span>
+                            </div>
+                            <small>Range: 0.1–2.5 cm</small>
+                        </div>
+                    </div>
+
+                    <button type="submit">
+                        Predict species
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </form>
+
+                <p class="form-note">Values must be within the ranges shown above.</p>
+            </section>
+        </section>
+
+        <footer class="page-footer">
+            <span>IRIS FLOWER CLASSIFICATION</span>
+            <span>FLASK · SCIKIT-LEARN · MLOPS</span>
+        </footer>
+    </main>
+</body>
+</html>

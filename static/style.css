@@ -1,0 +1,491 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+    font-family: "DM Sans", Arial, sans-serif;
+    color: #17312a;
+    background: #eef3ef;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 14% 12%, rgba(192, 220, 194, 0.38), transparent 32%),
+        radial-gradient(ellipse at 91% 84%, rgba(217, 225, 190, 0.35), transparent 30%),
+        #eef3ef;
+}
+
+.page {
+    width: min(1120px, calc(100% - 40px));
+    margin: 42px auto 24px;
+}
+
+.app-card {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    overflow: hidden;
+    min-height: 650px;
+    background: #ffffff;
+    border: 1px solid rgba(205, 221, 209, 0.8);
+    border-radius: 28px;
+    box-shadow: 0 26px 70px rgba(31, 65, 48, 0.12);
+}
+
+.intro-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 38px 42px;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 15% 95%, rgba(122, 183, 133, 0.24), transparent 34%),
+        linear-gradient(145deg, #163d32 0%, #1f5b43 58%, #2d7651 100%);
+}
+
+.intro-panel::after {
+    position: absolute;
+    right: -115px;
+    bottom: -150px;
+    width: 340px;
+    height: 340px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 50%;
+    content: "";
+}
+
+.brand {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.brand-icon {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    color: #d7f2d6;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+}
+
+.brand-light {
+    color: #b8d5c3;
+    font-weight: 500;
+}
+
+.flower-art {
+    z-index: 1;
+    display: grid;
+    height: 215px;
+    margin: 25px 0 5px;
+    place-items: center;
+}
+
+.flower-art svg {
+    width: 210px;
+    max-width: 100%;
+    filter: drop-shadow(0 14px 22px rgba(7, 28, 20, 0.2));
+}
+
+.flower-halo {
+    fill: rgba(255, 255, 255, 0.07);
+    stroke: rgba(255, 255, 255, 0.12);
+}
+
+.petal {
+    fill: #e7b8d4;
+    stroke: rgba(255, 255, 255, 0.45);
+    stroke-width: 2px;
+    transform-origin: 120px 120px;
+}
+
+.petal-one {
+    fill: #d7a4cf;
+    transform: rotate(0deg);
+}
+
+.petal-two {
+    fill: #e7bfdc;
+    transform: rotate(72deg);
+}
+
+.petal-three {
+    fill: #c997c8;
+    transform: rotate(144deg);
+}
+
+.petal-four {
+    fill: #e9c8dd;
+    transform: rotate(216deg);
+}
+
+.petal-five {
+    fill: #d5a7d0;
+    transform: rotate(288deg);
+}
+
+.flower-center {
+    fill: #f4d27a;
+    stroke: #fff0bc;
+    stroke-width: 4px;
+}
+
+.flower-stem,
+.flower-leaf {
+    fill: none;
+    stroke: #9ed09d;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 7px;
+}
+
+.flower-leaf {
+    fill: #6eaa76;
+    stroke-width: 2px;
+}
+
+.second-leaf {
+    fill: #83bc7e;
+}
+
+.eyebrow {
+    margin: 0;
+    color: #c1e3c7;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+h1,
+h2 {
+    font-family: "Manrope", Arial, sans-serif;
+}
+
+h1 {
+    z-index: 1;
+    margin: 13px 0 12px;
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.065em;
+    line-height: 0.99;
+}
+
+h1 span {
+    color: #c7e5ab;
+}
+
+.intro-copy {
+    z-index: 1;
+    max-width: 360px;
+    margin: 0;
+    color: #d6e6db;
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+.model-stats {
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.model-stats div {
+    display: grid;
+    gap: 5px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.model-stats strong {
+    color: #f4f8ef;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.08rem;
+}
+
+.model-stats span {
+    color: #c1d8ca;
+    font-size: 0.68rem;
+    line-height: 1.35;
+}
+
+.form-panel {
+    align-self: center;
+    padding: 54px 56px;
+}
+
+.form-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.form-eyebrow {
+    color: #47865b;
+}
+
+h2 {
+    margin: 8px 0 6px;
+    color: #19352b;
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+.form-copy {
+    margin: 0;
+    color: #718078;
+    font-size: 0.9rem;
+}
+
+.ready-badge {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 10px;
+    border: 1px solid #d8eadb;
+    border-radius: 999px;
+    background: #f3faf4;
+    color: #39734c;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.ready-badge span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #43a66a;
+    box-shadow: 0 0 0 3px rgba(67, 166, 106, 0.12);
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+label {
+    color: #274238;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.input-wrap {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    border: 1px solid #d7e2da;
+    border-radius: 11px;
+    background: #fbfdfb;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input-wrap:focus-within {
+    border-color: #489165;
+    box-shadow: 0 0 0 4px rgba(72, 145, 101, 0.12);
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #19352b;
+    font: inherit;
+    font-size: 0.96rem;
+}
+
+input::placeholder {
+    color: #a9b7ad;
+}
+
+.input-wrap span {
+    color: #91a096;
+    font-size: 0.75rem;
+}
+
+.field small {
+    color: #94a198;
+    font-size: 0.68rem;
+}
+
+button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 11px;
+    background: linear-gradient(100deg, #246b49, #34875b);
+    box-shadow: 0 9px 18px rgba(44, 119, 77, 0.18);
+    color: #ffffff;
+    font: inherit;
+    font-size: 0.94rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+button span {
+    font-size: 1.2rem;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(44, 119, 77, 0.25);
+}
+
+.form-note {
+    margin: 14px 0 0;
+    color: #8a9890;
+    font-size: 0.74rem;
+    line-height: 1.5;
+}
+
+.message {
+    margin: -12px 0 22px;
+    padding: 13px 15px;
+    border-radius: 11px;
+}
+
+.error {
+    border: 1px solid #f3d1cd;
+    background: #fff4f2;
+    color: #a23b32;
+    font-size: 0.86rem;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #d1ead5;
+    background: #f0faf1;
+}
+
+.result span {
+    color: #52725d;
+    font-size: 0.8rem;
+}
+
+.result strong {
+    color: #246b49;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.08rem;
+    text-transform: capitalize;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 4px 0;
+    color: #829188;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+}
+
+@media (max-width: 850px) {
+    .page {
+        width: min(620px, calc(100% - 28px));
+        margin-top: 20px;
+    }
+
+    .app-card {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-panel {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .flower-art {
+        height: 150px;
+        margin: 8px 0 0;
+    }
+
+    .flower-art svg {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .model-stats {
+        margin-top: 25px;
+    }
+
+    .form-panel {
+        padding: 36px 30px 40px;
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    .app-card {
+        border-radius: 20px;
+    }
+
+    .intro-panel {
+        padding: 25px 23px;
+    }
+
+    .form-panel {
+        padding: 29px 22px 32px;
+    }
+
+    .form-heading {
+        display: block;
+    }
+
+    .ready-badge {
+        margin-top: 14px;
+    }
+
+    .fields {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        padding-left: 5px;
+    }
+}
